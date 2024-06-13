@@ -1,17 +1,9 @@
 import express from "express";
 import createBot from "./bot.js";
-import path from "path";
-import fs from "fs";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const botToken = "6452445654:AAGbw-uPQQ2hUzChoIoa3amP9mx7OsPImAY";
-
-// Create media directory if it doesn't exist
-const mediaDir = path.join(__dirname, "media");
-if (!fs.existsSync(mediaDir)) {
-  fs.mkdirSync(mediaDir);
-}
 
 // Create and start the bot
 const bot = createBot(botToken);
